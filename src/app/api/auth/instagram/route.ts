@@ -33,8 +33,7 @@ export async function GET(req: NextRequest) {
         });
 
         return response;
-    } catch (error: any) {
-        console.error('Token exchange error', error.response?.data || error.message);
+    } catch (error) {
         return NextResponse.json({ error: 'Token exchange failed' }, { status: 500 });
     }
 }

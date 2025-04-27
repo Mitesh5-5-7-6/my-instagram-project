@@ -32,11 +32,11 @@ export default async function Home() {
 
   return (
     <div className="grid grid-cols-3 gap-4">
-      {media.map((item: any) => (
+      {/* {media.map((item) => (
         <a key={item.id} href={item.permalink} target="_blank" rel="noopener noreferrer">
           <img src={item.thumbnail_url || item.media_url} alt={item.caption || 'Instagram media'} />
         </a>
-      ))}
+      ))} */}
     </div>
   );
 }
