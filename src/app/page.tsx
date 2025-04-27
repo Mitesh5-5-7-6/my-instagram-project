@@ -29,6 +29,7 @@ export default async function Home() {
   }
 
   const media = await getInstagramMedia(token);
+  console.log(media)
 
   return (
     <div className="grid grid-cols-3 gap-4">
