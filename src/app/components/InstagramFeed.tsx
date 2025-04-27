@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { fetchInstagramData } from '../utils/instagramFetcher';
 
 type InstagramFeedProps = {
     username: string;
@@ -67,9 +66,8 @@ const InstagramFeed = ({ username, postCount = 6, debug = false }: InstagramFeed
                 });
 
                 setPosts(data.posts && Array.isArray(data.posts) ? data.posts.slice(0, postCount) : []);
-            } catch (err: any) {
+            } catch (err) {
                 const error = err as Error;
-                console.error('Error fetching Instagram data:', error);
                 setError('Failed to load Instagram feed. Please try again later.');
                 setErrorDetails(error.message);
             } finally {
